@@ -1,0 +1,7 @@
+Command Prompt (administrator)
+> usbipd wsl attach --distribution=Debian --busid=1-2
+
+Debian
+$ sudo service dbus start
+$ sudo service bluetooth start
+

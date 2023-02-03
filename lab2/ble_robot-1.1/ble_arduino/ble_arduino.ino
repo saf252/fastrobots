@@ -5,7 +5,7 @@
 #include <ArduinoBLE.h>
 
 //////////// BLE UUIDs ////////////
-#define BLE_UUID_TEST_SERVICE "9A48ECBA-2E92-082F-C079-9E75AAE428B1"
+#define BLE_UUID_TEST_SERVICE "487dcfb9-3553-41d8-9c89-a2d29a7ec943"
 
 #define BLE_UUID_RX_STRING "9750f60b-9c9c-4158-b620-02ec9521cd99"
 
