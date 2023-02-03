@@ -1,4 +1,7 @@
-theme: jekyll-theme-time-machine
-title: "Olive Faber -- ECE 4160"
-description: "Labs and Assignments for Fast Robots"
+# Site settings
+title: saf252 - ECE 4160
+description: Olive Faber's labs and assignments for Fast Robots
 show_downloads: false
+
+# Build settings
+theme: jekyll-theme-time-machine
