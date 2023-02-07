@@ -41,7 +41,42 @@ enum CommandTypes
     ECHO,
     DANCE,
     SET_VEL,
+    GET_TIME_MILLIS,
+    GET_TEMP_5s,
+    GET_TEMP_5s_RAPID,
 };
+
+void check_send(EString& tx_estring_value) {
+    if (tx_estring_value.get_length() >= MAX_MSG_SIZE - 50) {
+        tx_characteristic_string.writeValue(tx_estring_value.c_str());
+        Serial.print("Sent back: ");
+        Serial.println(tx_estring_value.c_str());
+        tx_estring_value.clear();
+    }
+}
+
+void get_temp_5s(unsigned long interval) {
+    tx_estring_value.clear();
+    unsigned long startMillis = millis();
+    unsigned long previousMillis = startMillis - interval;
+    unsigned long currentMillis = startMillis;
+    while (currentMillis - startMillis < 5000) {
+        if (currentMillis - previousMillis >= interval) {
+            check_send(tx_estring_value);
+            tx_estring_value.append("|T:");
+            tx_estring_value.append((int) currentMillis);
+            check_send(tx_estring_value);
+            tx_estring_value.append("|C:");
+            tx_estring_value.append(getTempDegC());
+            previousMillis = currentMillis;
+        }
+        currentMillis = millis();
+    }
+    tx_estring_value.append("|E");
+    tx_characteristic_string.writeValue(tx_estring_value.c_str());
+    Serial.print("Sent back: ");
+    Serial.println(tx_estring_value.c_str());
+}
 
 void
 handle_command()
@@ -122,9 +157,14 @@ handle_command()
             if (!success)
                 return;
 
-            /*
-             * Your code goes here.
-             */
+            tx_estring_value.clear();
+            tx_estring_value.append("Robot says -> ");
+            tx_estring_value.append(char_arr);
+            tx_estring_value.append(" :)");
+            tx_characteristic_string.writeValue(tx_estring_value.c_str());
+
+            Serial.print("Sent back: ");
+            Serial.println(tx_estring_value.c_str());
             
             break;
         /*
@@ -139,6 +179,39 @@ handle_command()
          * SET_VEL
          */
         case SET_VEL:
+
+            break;
+        
+        /*
+         * Reply with a timestamp
+         */
+        case GET_TIME_MILLIS:
+
+            tx_estring_value.clear();
+            tx_estring_value.append("T:");
+            tx_estring_value.append((int) millis());
+            tx_characteristic_string.writeValue(tx_estring_value.c_str());
+
+            Serial.print("Sent back: ");
+            Serial.println(tx_estring_value.c_str());
+            
+            break;
+          
+        /*
+         * Send the die temperature in degrees Celsius once per second for 5 seconds
+         */
+        case GET_TEMP_5s:
+
+            get_temp_5s(1000);
+
+            break;
+
+        /*
+         * Send the die temperature in degrees Celsius ten times per second for 5 seconds
+         */
+        case GET_TEMP_5s_RAPID:
+
+            get_temp_5s(100);
 
             break;
         
