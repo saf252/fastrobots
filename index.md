@@ -13,3 +13,4 @@ Hi, I'm Olive! I'm a senior ECE/CS major, with minors in Applied Math and Lingui
 
 - [Lab 1: Artemis](lab1/)
 - [Lab 2: Bluetooth connection](lab2/)
+- [Lab 3: TOF](lab3/)
