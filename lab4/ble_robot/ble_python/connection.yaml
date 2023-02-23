@@ -1,0 +1,9 @@
+artemis_address: 'c0:83:21:6a:9a:3c'
+
+ble_service: '487dcfb9-3553-41d8-9c89-a2d29a7ec943'
+
+characteristics:
+  TX_CMD_STRING: '9750f60b-9c9c-4158-b620-02ec9521cd99'
+
+  RX_STREAM: '51cc72fd-5d0a-48f9-9d9f-7829f37e1f02'
+
