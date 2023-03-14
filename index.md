@@ -15,3 +15,4 @@ Hi, I'm Olive! I'm a senior ECE/CS major, with minors in Applied Math and Lingui
 - [Lab 2: Bluetooth connection](lab2/)
 - [Lab 3: TOF](lab3/)
 - [Lab 4: IMU](lab4/)
+- [Lab 5: Motor driver and open loop control](lab5/)
