@@ -1,0 +1,7 @@
+artemis_address: 'c0:83:21:6a:9a:3c'
+
+ble_service: '2ed7b712-660d-4e3d-aa5e-812641c1dfdd'
+
+characteristics:
+  TX_CMD_STRING: '9750f60b-9c9c-4158-b620-02ec9521cd99'
+  TX_PWM_LONG: '911532ae-004d-4c02-9813-7e494efd5408'
