@@ -18,3 +18,4 @@ Hi, I'm Olive! I'm a senior ECE/CS major, with minors in Applied Math and Lingui
 - [Lab 5: Motor driver and open loop control](lab5/)
 - [Lab 6: PID speed control](lab6/)
 - [Lab 7: Kalman Filters (sensor fusion)](lab7/)
+- [Lab 8: Stunts](lab8/)
