@@ -3,8 +3,7 @@
 
 # Lab 8: Stunts!
 
-_I'm honestly kind of struggling right now, and I can't find my bluetooth dongle, so I don't have videos yet as I haven't been able to run this on the robot.
-Hopefully I'll be able to get that sorted soon._
+I chose to complete Task A: position control.
 
 ## Setup
 
@@ -77,7 +76,7 @@ and I could run the stunt and collect the ToF and PWM data from Jupyter with
 ##
 time.sleep(5)
 timeout_s = 10
-target_m = 0.5
+target_m = 1.5
 power_l = 255
 power_r = power_l
 ble.send_command(CMD.RUN_STUNT, f"{int(timeout_s*1000)}|{int(target_m*1000)}|{power_l}|{power_r}")
@@ -90,4 +89,24 @@ stream_data = list(unpack_stream('LHh*', await fut))
 
 ## Stunts
 
-_I will put my graphs and videos here as soon as I am actually able to create them._
+Below are videos of my stunts, and graphs of the ToF data recorded and motor output generated during each one.
+In the ToF graphs, the green dotted line indicates the goal 0.5 meters from the wall, and the red dotted line indicates the target actually given to the robot in order to get it to not crash.
+I was unable to get the robot to actually flip over without completely losing orientation.
+
+### Run 1
+
+<iframe width="419" height="745" src="https://www.youtube.com/embed/aHaMR9fzc_E" title="Lab 8 | Run 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+![Run 1 graphs](run1.jpg)
+
+### Run 2
+
+<iframe width="419" height="745" src="https://www.youtube.com/embed/dzNqlOF97A4" title="Lab 8 | Run 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+![Run 2 graphs](run2.jpg)
+
+### Run 3
+
+<iframe width="419" height="745" src="https://www.youtube.com/embed/gIHTj6zB7io" title="Lab 8 | Run 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+![Run 3 graphs](run3.jpg)

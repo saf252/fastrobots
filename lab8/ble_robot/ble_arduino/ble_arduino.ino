@@ -46,11 +46,11 @@ enum CommandTypes {
 #pragma region Motor_Config
 //////////// Motor Config ////////////
 
-#define MOTOR1_FWD A2
-#define MOTOR1_BCK A3
+#define MOTOR1_FWD A3
+#define MOTOR1_BCK A2
 
-#define MOTOR2_FWD A14
-#define MOTOR2_BCK A15
+#define MOTOR2_FWD A15
+#define MOTOR2_BCK A14
 
 //////////// Motor Config ////////////
 #pragma endregion Motor_Config
@@ -271,7 +271,7 @@ void run_stunt(unsigned long timeout, unsigned short target, uint8_t power_l, ui
       tof2_data_buf[tof1_buf_len] = -(int16_t) power_l;
       ++tof1_buf_len;
     }
-  } while (currentMillis - startMillis < duration);
+  } while (currentMillis - startMillis < 2 * duration);
 
   analogWrite(MOTOR1_FWD, 0);
   analogWrite(MOTOR2_FWD, 0);
