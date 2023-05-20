@@ -22,3 +22,4 @@ Hi, I'm Olive! I'm a senior ECE/CS major, with minors in Applied Math and Lingui
 - [Lab 9: Mapping (real)](lab9/)
 - [Lab 10: Localization (sim)](lab10/)
 - [Lab 11: Localization (real)](lab11/)
+- [Lab 12: Planning and execution (real)](lab12/)
