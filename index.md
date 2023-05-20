@@ -19,5 +19,6 @@ Hi, I'm Olive! I'm a senior ECE/CS major, with minors in Applied Math and Lingui
 - [Lab 6: PID speed control](lab6/)
 - [Lab 7: Kalman Filters (sensor fusion)](lab7/)
 - [Lab 8: Stunts](lab8/)
+- [Lab 9: Mapping (real)](lab9/)
 - [Lab 10: Localization (sim)](lab10/)
 - [Lab 11: Localization (real)](lab11/)
