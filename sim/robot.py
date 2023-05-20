@@ -81,7 +81,7 @@ class VirtualRobot(BaseRobot):
         """
         return self.cmdr.get_sensor()
 
-    def perform_observation_loop(self, rot_vel=120):
+    async def perform_observation_loop(self, rot_vel=120):
         """Perform the observation loop behavior, where the robot does a 360 degree turn 
         in place while collecting equidistant (in the angular space) sensor data, 
         starting with the first sensor reading taken at the robot's current heading. 
